@@ -12,9 +12,12 @@
 		A64F4BE720F5A40D001FDD78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64F4BE520F5A40D001FDD78 /* Main.storyboard */; };
 		A64F4BE920F5A40F001FDD78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A64F4BE820F5A40F001FDD78 /* Assets.xcassets */; };
 		A64F4BEC20F5A40F001FDD78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A64F4BEA20F5A40F001FDD78 /* LaunchScreen.storyboard */; };
+		D3B1EF201CA2451218C5BA1C /* Pods_pokerxb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A6E7F34BA4AFC03330716D /* Pods_pokerxb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D45C797E896F1F1A66DE35 /* Pods-pokerxb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokerxb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokerxb/Pods-pokerxb.debug.xcconfig"; sourceTree = "<group>"; };
+		73A4CB2394BB0730AE8193D8 /* Pods-pokerxb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokerxb.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokerxb/Pods-pokerxb.release.xcconfig"; sourceTree = "<group>"; };
 		A64F4BDE20F5A40D001FDD78 /* pokerxb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokerxb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64F4BE120F5A40D001FDD78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A64F4BE320F5A40D001FDD78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A64F4BE820F5A40F001FDD78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A64F4BEB20F5A40F001FDD78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A64F4BED20F5A40F001FDD78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5A6E7F34BA4AFC03330716D /* Pods_pokerxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokerxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B1EF201CA2451218C5BA1C /* Pods_pokerxb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BCCEE69602D4B69E2CB6498 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21D45C797E896F1F1A66DE35 /* Pods-pokerxb.debug.xcconfig */,
+				73A4CB2394BB0730AE8193D8 /* Pods-pokerxb.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		71CE55CAFF2F28F7ABC84A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5A6E7F34BA4AFC03330716D /* Pods_pokerxb.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A64F4BD520F5A40D001FDD78 = {
 			isa = PBXGroup;
 			children = (
 				A64F4BE020F5A40D001FDD78 /* pokerxb */,
 				A64F4BDF20F5A40D001FDD78 /* Products */,
+				5BCCEE69602D4B69E2CB6498 /* Pods */,
+				71CE55CAFF2F28F7ABC84A41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A64F4BF020F5A40F001FDD78 /* Build configuration list for PBXNativeTarget "pokerxb" */;
 			buildPhases = (
+				09D5593773F88636B62A756C /* [CP] Check Pods Manifest.lock */,
 				A64F4BDA20F5A40D001FDD78 /* Sources */,
 				A64F4BDB20F5A40D001FDD78 /* Frameworks */,
 				A64F4BDC20F5A40D001FDD78 /* Resources */,
+				A68795CEDDA901A2901B1852 /* [CP] Embed Pods Frameworks */,
+				3CACA5E0E5FC0B8E7F2D63E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09D5593773F88636B62A756C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pokerxb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CACA5E0E5FC0B8E7F2D63E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokerxb/Pods-pokerxb-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A68795CEDDA901A2901B1852 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokerxb/Pods-pokerxb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A64F4BDA20F5A40D001FDD78 /* Sources */ = {
@@ -278,11 +356,13 @@
 		};
 		A64F4BF120F5A40F001FDD78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21D45C797E896F1F1A66DE35 /* Pods-pokerxb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CZX5PA9FH;
 				INFOPLIST_FILE = pokerxb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +376,13 @@
 		};
 		A64F4BF220F5A40F001FDD78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73A4CB2394BB0730AE8193D8 /* Pods-pokerxb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CZX5PA9FH;
 				INFOPLIST_FILE = pokerxb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
