@@ -6,17 +6,10 @@
 	<false/>
 	<key>method</key>
 	<string>development</string>
-	<key>provisioningProfiles</key>
-	<dict>
-		<key>com.py.pokerxb</key>
-		<string>DEVELOPMENT</string>
-	</dict>
-	<key>signingCertificate</key>
-	<string>iPhone Distribution</string>
 	<key>signingStyle</key>
-	<string>manual</string>
+	<string>automatic</string>
 	<key>stripSwiftSymbols</key>
-	<true/>
+	<false/>
 	<key>teamID</key>
 	<string>7CZX5PA9FH</string>
 	<key>thinning</key>
