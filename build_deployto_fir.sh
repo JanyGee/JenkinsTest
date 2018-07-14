@@ -5,7 +5,8 @@ export LC_ALL=zh_CN.GB2312;
 export LANG=zh_CN.GB2312
 
 ###############设置需编译的项目配置名称
-buildConfig=$1 #编译的方式,有Release,Debug，Intranet,Official,Extranet,自定义的AdHoc等
+#buildConfig=$1 #编译的方式,有Release,Debug，Intranet,Official,Extranet,自定义的AdHoc等
+buildConfig="Release"
 
 if [ -z $buildConfig ]; then
 buildConfig="Release"
