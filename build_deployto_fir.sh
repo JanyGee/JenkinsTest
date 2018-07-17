@@ -40,9 +40,11 @@ bundleBuildVersion=`/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $infoPlis
 ###############开始编译app
 if $isWorkSpace ; then  #判断编译方式
 echo  "开始编译workspace...."
-xcodebuild archive -workspace $projectName.xcworkspace -scheme $projectName -configuration $buildConfig -archivePath $buildAppToDir
+#xcodebuild archive -workspace $projectName.xcworkspace -scheme $projectName -configuration $buildConfig -archivePath $buildAppToDir
+xcodebuild  -workspace $projectName.xcworkspace -scheme $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
 else
 echo  "开始编译target...."
+#xcodebuild  -target  $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
 xcodebuild  -target  $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
 fi
 #判断编译结果
@@ -56,7 +58,7 @@ fi
 ###############开始打包成.ipa
 ipaName=`echo $projectName | tr "[:upper:]" "[:lower:]"` #将项目名转小写
 echo "开始打包$projectName.app成$projectName.ipa....."
-xcodebuild -exportArchive -archivePath $projectDir/build.xcarchive -exportOptionsPlist $projectDir/ExportOptions.plist -exportPath $wwwIPADir -allowProvisioningUpdates
+xcodebuild -exportArchive -archivePath $projectDir/build.xcarchive -exportOptionsPlist $projectDir/ExportOptions.plist -exportPath $wwwIPADir
 
 ###############开始拷贝到目标下载目录
 #检查文件是否存在
