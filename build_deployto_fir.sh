@@ -5,8 +5,11 @@ export LC_ALL=zh_CN.GB2312;
 export LANG=zh_CN.GB2312
 
 ###############设置需编译的项目配置名称
-#buildConfig=$1 #编译的方式,有Release,Debug，Intranet,Official,Extranet,自定义的AdHoc等
+buildConfig=$1 #编译的方式,有Release,Debug，Intranet,Official,Extranet,自定义的AdHoc等
+
+if [ -z $buildConfig ]; then
 buildConfig="Release"
+fi
 
 echo "~~~~~~~~~~~~~~~~~~~当前配置环境是$buildConfig~~~~~~~~~~~~~~~~~~~"
 
@@ -14,6 +17,7 @@ echo "~~~~~~~~~~~~~~~~~~~当前配置环境是$buildConfig~~~~~~~~~~~~~~~~~~~"
 ##############################以下部分为自动生产部分，不需要手动修改############################
 ##########################################################################################
 projectName=`find . -name *.xcodeproj | awk -F "[/.]" '{print $(NF-1)}'` #项目名称
+#projectName="PokerClub"
 projectDir=`pwd` #项目所在目录的绝对路径
 wwwIPADir=./output #ipa，icon最后所在的目录绝对路径
 isWorkSpace=true  #判断是用的workspace还是直接project，workspace设置为true，否则设置为false
@@ -40,11 +44,9 @@ bundleBuildVersion=`/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $infoPlis
 ###############开始编译app
 if $isWorkSpace ; then  #判断编译方式
 echo  "开始编译workspace...."
-#xcodebuild archive -workspace $projectName.xcworkspace -scheme $projectName -configuration $buildConfig -archivePath $buildAppToDir
-xcodebuild  -workspace $projectName.xcworkspace -scheme $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
+xcodebuild archive -workspace $projectName.xcworkspace -scheme $projectName -configuration $buildConfig -archivePath $buildAppToDir
 else
 echo  "开始编译target...."
-#xcodebuild  -target  $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
 xcodebuild  -target  $projectName  -configuration $buildConfig clean build SYMROOT=$buildAppToDir
 fi
 #判断编译结果
@@ -58,7 +60,7 @@ fi
 ###############开始打包成.ipa
 ipaName=`echo $projectName | tr "[:upper:]" "[:lower:]"` #将项目名转小写
 echo "开始打包$projectName.app成$projectName.ipa....."
-xcodebuild -exportArchive -archivePath $projectDir/build.xcarchive -exportOptionsPlist $projectDir/ExportOptions.plist -exportPath $wwwIPADir
+xcodebuild -exportArchive -archivePath $projectDir/build.xcarchive -exportOptionsPlist $projectDir/ExportOptions.plist -exportPath $wwwIPADir -allowProvisioningUpdates
 
 ###############开始拷贝到目标下载目录
 #检查文件是否存在
