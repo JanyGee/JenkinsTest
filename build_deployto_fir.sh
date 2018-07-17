@@ -8,17 +8,12 @@ export LANG=zh_CN.GB2312
 #buildConfig=$1 #编译的方式,有Release,Debug，Intranet,Official,Extranet,自定义的AdHoc等
 buildConfig="Release"
 
-if [ -z $buildConfig ]; then
-buildConfig="Release"
-fi
-
 echo "~~~~~~~~~~~~~~~~~~~当前配置环境是$buildConfig~~~~~~~~~~~~~~~~~~~"
 
 ##########################################################################################
 ##############################以下部分为自动生产部分，不需要手动修改############################
 ##########################################################################################
-#projectName=`find . -name *.xcodeproj | awk -F "[/.]" '{print $(NF-1)}'` #项目名称
-projectName="pokerxb"
+projectName=`find . -name *.xcodeproj | awk -F "[/.]" '{print $(NF-1)}'` #项目名称
 projectDir=`pwd` #项目所在目录的绝对路径
 wwwIPADir=./output #ipa，icon最后所在的目录绝对路径
 isWorkSpace=true  #判断是用的workspace还是直接project，workspace设置为true，否则设置为false
