@@ -359,7 +359,8 @@
 			baseConfigurationReference = 21D45C797E896F1F1A66DE35 /* Pods-pokerxb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7CZX5PA9FH;
 				INFOPLIST_FILE = pokerxb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -369,6 +370,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.py.pokerxb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6671b455-128b-4781-93af-b78d28ec3f93";
+				PROVISIONING_PROFILE_SPECIFIER = DEV;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -379,7 +382,8 @@
 			baseConfigurationReference = 73A4CB2394BB0730AE8193D8 /* Pods-pokerxb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7CZX5PA9FH;
 				INFOPLIST_FILE = pokerxb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -389,6 +393,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.py.pokerxb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bd776eee-a628-406f-8cdb-95e69e238f8c";
+				PROVISIONING_PROFILE_SPECIFIER = DIS;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
